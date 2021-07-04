@@ -1,0 +1,44 @@
+﻿@model FPT_Final.Models.Entities.Course
+
+@{
+    ViewBag.Title = "DetailCourse";
+    Layout = "~/Views/Staff/StaffLayout.cshtml";
+}
+
+<h2>DetailCourse</h2>
+
+<div>
+    <h4>Course</h4>
+    <hr />
+    <table>
+        <tr>
+            <td style="padding-top:10px;padding-right:20px"> 
+                <strong>
+                    @Html.DisplayNameFor(model => model.CourseName)
+                </strong>
+            </td>
+            <td style="padding-top:10px;">@Html.DisplayFor(model => model.CourseName)</td>
+        </tr>
+        <tr>
+            <td style="padding-top:20px">
+                <strong>
+                    @Html.DisplayNameFor(model => model.Description)
+                </strong>
+            </td>
+            <td style="padding-top:20px">@Html.DisplayFor(model => model.Description)</td>
+        </tr>
+        <tr>
+            <td style="padding-top:20px">
+                <strong>
+                    @Html.DisplayNameFor(model => model.Time)
+                </strong>
+            </td>
+            <td style="padding-top:20px">@Html.DisplayFor(model => model.Time)</td>
+        </tr>
+    </table>
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

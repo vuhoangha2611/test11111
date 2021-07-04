@@ -1,0 +1,44 @@
+﻿@model IEnumerable<FPT_Final.Models.Entities.Course>
+
+@{
+    ViewBag.Title = "ViewCourse";
+    Layout = "~/Views/Staff/StaffLayout.cshtml";
+}
+
+<h2>View all Courses</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditCourse", new { id = item.ID }) |
+            @Html.ActionLink("Detail", "DetailCourse", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "DeleteCourse", new { id = item.ID }) |
+            @Html.ActionLink("Add Trainer", "Create", "TrainerCourse")
+        </td>
+    </tr>
+}
+
+</table>

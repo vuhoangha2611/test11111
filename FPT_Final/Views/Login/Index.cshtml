@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/css/styles.css" rel="stylesheet" />
+    <script src="~/Scripts/js/datatables-simple-demo.js"></script>
+    <script src="~/Scripts/js/scripts.js"></script>
+</head>
+<body>
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                <div class="card-body">
+                                    @using (Html.BeginForm())
+                                    {
+                                    <form style="text-align:center">
+                                        <div><h1>You are...</h1></div>
+                                        <div>
+                                            @Html.ActionLink("Admin", "login", "Admin")
+                                        </div>
+                                        <div>
+                                            @Html.ActionLink("Training Staff", "login", "Staff")
+                                        </div>
+                                        <div>
+                                            @Html.ActionLink("Trainer", "login", "Trainer")
+                                        </div>
+                                        <div>
+                                            @Html.ActionLink("Trainee", "login", "Trainee")
+                                        </div>
+                                                                                 
+                                    </form>
+                                    }
+                                </div>
+                                <div class="card-footer text-center py-3" style="min-height:50px">                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<FPT_Final.Models.Entities.Staff>
+
+@{
+    ViewBag.Title = "IndexStaff";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+
+<h2>View all Staffs</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditStaff", new { id=item.ID }) |
+            @Html.ActionLink("Details", "DetailStaff", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "DeleteStaff", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

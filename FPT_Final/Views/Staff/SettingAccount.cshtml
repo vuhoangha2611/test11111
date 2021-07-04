@@ -1,0 +1,38 @@
+﻿@model FPT_Final.Models.Entities.Staff
+@{
+    ViewBag.Title = "SettingAccount";
+    Layout = "~/Views/Staff/StaffLayout.cshtml";
+}
+
+<h2>SettingAccount</h2>
+@using (Html.BeginForm("SettingAccount", "Staff", FormMethod.Post))
+{
+
+    <table class="center">
+
+
+        <tr>
+            <td> <strong> Old Password</strong></td>
+            <td>
+                @Html.EditorFor(pass => pass.Password)
+            </td>
+            <td>@Html.ValidationMessageFor(pass => pass.Password)</td>
+        </tr>
+        <tr class="rowspace">
+            <td> <strong> New Password</strong></td>
+
+            <td>
+                @Html.EditorFor(pass => pass.NewPassword)
+            </td>
+            <td>@Html.ValidationMessageFor(pass => pass.NewPassword)</td>
+        </tr>
+
+        <tr class="rowspace">
+            <td colspan="3" id="button">
+                <input type="submit" value="Save Change" style="background-color:dodgerblue; color:white"/>
+            </td>
+        </tr>
+        <tr class="rowspace"><td colspan="3">@ViewBag.Message</td></tr>
+    </table>
+
+}

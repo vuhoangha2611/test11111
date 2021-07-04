@@ -1,0 +1,90 @@
+﻿@model FPT_Final.Models.Entities.Trainer
+@{
+    ViewBag.Title = "DetailTrainer";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <table>
+        <tr>
+            <td style="padding-top:20px">
+                <strong>
+                    @Html.DisplayNameFor(model => model.Images)
+                </strong>
+            </td>
+            <td style="padding-top:20px"><img src="@Url.Content(Model.Images)" style="height:100px; width:100px;" /></td>
+        </tr>
+        <tr style="padding-top:20px">
+            <td style="padding-top:20px">
+                <strong>
+                    @Html.DisplayNameFor(model => model.Name)
+                </strong>
+            </td>
+            <td style="padding-top:20px">@Html.DisplayFor(model => model.Name)</td>
+        </tr>
+        <tr style="padding-top:20px">
+            <td style="padding-top:20px">
+                <strong>
+                    @Html.DisplayNameFor(model => model.Age)
+                </strong>
+            </td>
+            <td style="padding-top:20px">@Html.DisplayFor(model => model.Age)</td>
+        </tr>
+        <tr style="padding-top:20px">
+            <td style="padding-top:20px">
+                <strong>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </strong>
+            </td>
+            <td style="padding-top:20px">@Html.DisplayFor(model => model.Gender)</td>
+        </tr>
+        <tr style="padding-top:20px">
+            <td style="padding-top:20px">
+                <strong>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </strong>
+            </td>
+            <td style="padding-top:20px">@Html.DisplayFor(model => model.PhoneNumber)</td>
+        </tr>
+        <tr style="padding-top:20px">
+            <td style="padding-top:20px">
+                <strong>
+                    @Html.DisplayNameFor(model => model.Address)
+                </strong>
+            </td>
+            <td style="padding-top:20px">@Html.DisplayFor(model => model.Address)</td>
+        </tr>
+        <tr style="padding-top:20px">
+            <td style="padding-right:20px; padding-top:20px">
+                <strong>
+                    @Html.DisplayNameFor(model => model.Education)
+                </strong>
+            </td>
+
+            <td style="padding-top:20px">@Html.DisplayFor(model => model.Education)</td>
+        </tr>
+        <tr style="padding-top:20px">
+            <td style="padding-top:20px">
+                <strong>
+                    @Html.DisplayNameFor(model => model.Email)
+                </strong>
+            </td>
+            <td style="padding-top:20px">@Html.DisplayFor(model => model.Email)</td>
+        </tr>
+        <tr style="padding-top:20px">
+            <td style="padding-top:20px">
+                <strong>
+                    @Html.DisplayNameFor(model => model.Password)
+                </strong>
+            </td>
+            <td style="padding-top:20px">@Html.DisplayFor(model => model.Password)</td>
+        </tr>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditTrainer", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "ViewTrainer")
+</p>
+

@@ -1,0 +1,70 @@
+﻿@model FPT_Final.Models.Entities.Staff
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/css/styles.css" rel="stylesheet" />
+    <script src="~/Scripts/js/datatables-simple-demo.js"></script>
+    <script src="~/Scripts/js/scripts.js"></script>
+</head>
+<body>
+    <div>
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card-header"><h3 class="text-center font-weight-light my-4">Training Staff Login </h3></div>
+                                <div class="card-body">
+                                    @ViewBag.error
+                                    @using (Html.BeginForm("login", "Staff", FormMethod.Post))
+                                    {
+                                        <form>
+                                            <div class="form-floating mb-3">
+                                                <div>
+                                                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.Email)
+                                                </div>
+
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <div>
+                                                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.Password)
+                                                </div>
+                                            </div>
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
+                                                <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                                                <a class="small" href="password.html">Forgot Password?</a>
+                                                <input type="submit" name="name" value="Login" class="btn btn-primary" />
+                                            </div>
+                                        </form>
+                                    }
+
+                                </div>
+                                <div class="card-footer text-center py-3">
+                                    <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
+
+
